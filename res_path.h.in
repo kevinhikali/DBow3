@@ -1,0 +1,15 @@
+#ifndef __res_path_h__
+#define __res_path_h__
+
+#ifndef __linux__
+#define __linux__
+#endif
+#endif
+
+#define CONFIG_PATH "@CONFIG_PATH@"
+#define RESOURCE_REPO_PATH "@RESOURCE_REPO_PATH@"
+#define OUTPUT_PATH "@OUTPUT_PATH@"
+#define VOCABULARY_ORB_PATH "@VOCABULARY_ORB_PATH@"
+#define VOCABULARY_BLD_PATH "@VOCABULARY_BLD_PATH@"
+
+

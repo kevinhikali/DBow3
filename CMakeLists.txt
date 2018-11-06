@@ -214,19 +214,6 @@ SET(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} ${EXTRA_EXE_LI
 
 
 
-#------------------------------------------------
-# DIRS
-#------------------------------------------------
-ADD_SUBDIRECTORY(src)
-IF (BUILD_UTILS)
-ADD_SUBDIRECTORY(utils)
-ENDIF()
-
-IF (BUILD_TESTS)
-ADD_SUBDIRECTORY(tests)
-ENDIF()
-
-
 # ----------------------------------------------------------------------------
 # display status message for important variables
 # ----------------------------------------------------------------------------
@@ -264,3 +251,30 @@ MESSAGE( STATUS )
 MESSAGE( STATUS )
 MESSAGE( STATUS "Change a value with: cmake -D<Variable>=<Value>" )
 MESSAGE( STATUS )
+
+# ----------------------------------------------------------------------------
+# KEVINHIKALI
+# kevinhikali@hotmail.com
+# DBoW3 Repo
+# ----------------------------------------------------------------------------
+
+include_directories(
+	include
+	include/DBoW3/
+	${OpenCV_INCLUDE_DIRS}
+)
+
+#------------------------------------------------
+# DIRS
+#------------------------------------------------
+add_subdirectory(src/DBoW3)
+
+if (BUILD_UTILS)
+	add_subdirectory(src/utils)
+endif()
+
+if (BUILD_TESTS)
+	add_subdirectory(src/tests)
+endif()
+
+

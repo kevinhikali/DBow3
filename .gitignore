@@ -1,0 +1,53 @@
+# Prerequisites
+*.d
+*~
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+tags
+vocabulary/*.yml
+3rdparty/DBoW2/build/*
+3rdparty/DBoW2/lib/*
+3rdparty/dbow3/build/*
+3rdparty/fbow/*
+3rdparty/line_descriptor/build/*
+3rdparty/line_descriptor/lib/*
+src/gl/build/*
+src/g2o/examples/*
+*.user
+build/*
+.vscode/*
+include/res_path.h
+*.swp
+cmake-build-debug/*
+.idea/
+*.png
+*.avi
