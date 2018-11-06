@@ -74,7 +74,7 @@ IF (INSTALL_DOC)
     INCLUDE("${PROJECT_SOURCE_DIR}/generateDoc.cmake")
     GENERATE_DOCUMENTATION(${PROJECT_SOURCE_DIR}/dox.in)
 ENDIF()
- 
+
 # ----------------------------------------------------------------------------
 #   Uninstall target, for "make uninstall"
 # ----------------------------------------------------------------------------
@@ -259,22 +259,32 @@ MESSAGE( STATUS )
 # ----------------------------------------------------------------------------
 
 include_directories(
-	include
-	include/DBoW3/
-	${OpenCV_INCLUDE_DIRS}
+        include
+        include/DBoW3/
+        ${OpenCV_INCLUDE_DIRS}
 )
 
 #------------------------------------------------
 # DIRS
 #------------------------------------------------
+
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/build/)
+set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/build/lib/)
+
 add_subdirectory(src/DBoW3)
+add_subdirectory(src/demo)
+
+set(LINK_LIBS
+    DBoW3
+    ${OpenCV_LIBS}
+)
 
 if (BUILD_UTILS)
-	add_subdirectory(src/utils)
+    add_subdirectory(src/utils)
 endif()
 
 if (BUILD_TESTS)
-	add_subdirectory(src/tests)
+    add_subdirectory(src/tests)
 endif()
 
 
