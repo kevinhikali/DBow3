@@ -268,16 +268,27 @@ include_directories(
 # DIRS
 #------------------------------------------------
 
+# Kevin resource relative path setting
+SET(CONFIG_PATH ${PROJECT_SOURCE_DIR}/config/)
+SET(RESOURCE_REPO_PATH ${PROJECT_SOURCE_DIR}/../res/)
+SET(OUTPUT_PATH ${RESOURCE_REPO_PATH}/output/)
+
+# Kevin resource relative path setting
+configure_file(
+        ${PROJECT_SOURCE_DIR}/res_path.h.in
+        ${PROJECT_SOURCE_DIR}/include/res_path.h
+)
+
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/build/)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/build/lib/)
-
-add_subdirectory(src/DBoW3)
-add_subdirectory(src/demo)
 
 set(LINK_LIBS
     DBoW3
     ${OpenCV_LIBS}
 )
+
+add_subdirectory(src/DBoW3)
+add_subdirectory(src/demo)
 
 if (BUILD_UTILS)
     add_subdirectory(src/utils)
